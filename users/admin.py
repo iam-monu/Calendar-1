@@ -1,5 +1,6 @@
 from django.contrib import admin
 from .models import Events #EventName
+from .models import Customer
 
 
 class AdminDashboard(admin.ModelAdmin):
@@ -9,3 +10,4 @@ class AdminDashboard(admin.ModelAdmin):
 
 # Register your models here.
 admin.site.register(Events, AdminDashboard)
+admin.site.register(Customer)

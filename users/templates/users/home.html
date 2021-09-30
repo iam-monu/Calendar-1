@@ -1,0 +1,62 @@
+{% extends 'users/base.html'%}
+{% block body%}
+
+  <h1>HOmmmmmmeeeeeeeeeeeee</h1>
+<li class="nav-item">
+        <a class="nav-link" href="{% url 'login_view' %}">signUp</a>
+      </li>
+<div class="row">
+    <div class="col-md">
+        <div class="card card-body">
+            <h5>Events</h5>
+
+        </div>
+        <div class="card card-body">
+            <table class="table">
+                <tr>
+                    <th>Username</th>
+                    <th>Title</th>
+                    <th>Desc.</th>
+                    <th>meet_id</th>
+                    <th>Start_time</th>
+                    <th>End_time</th>
+                </tr>
+                {% for i in events %}
+                <tr>
+                    <td>{{i.user}}</td>
+                    <td>{{i.title}}</td>
+                    <td>{{i.description}}</td>
+                    <td>{{i.meet_id}}</td>
+                    <td>{{i.start_time}}</td>
+                    <td>{{i.end_time}}</td>
+                </tr>
+                {% endfor %}
+
+            </table>
+        </div>
+    </div>
+</div>
+
+
+<table class="table table-dark">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">First</th>
+      <th scope="col">Last</th>
+      <th scope="col">Handle</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+    </tr>
+
+
+  </tbody>
+</table>
+
+{% endblock body%}

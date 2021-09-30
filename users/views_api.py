@@ -59,11 +59,11 @@ class RegisterView(APIView):
                 response['message'] = 'key password not found'
                 raise Exception('Key password not found')
 
-            check_user =User.objects.filter(username =data.get('username')).first
+            check_user = User.objects.filter(username =data.get('username')).first
 
-            if check_user:
-                response['message'] = 'username already taken'
-                raise Exception('username already taken')
+            # if check_user :
+            #     response['message'] = 'username already taken'
+            #     raise Exception('username already taken')
 
             user_obj = User.objects.create(username = data.get('username'))
             user_obj.set_password(data.get('password'))
